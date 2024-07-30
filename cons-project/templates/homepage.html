@@ -2,6 +2,16 @@
 <html>
 <head>
     <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Kalnia+Glaze:wght@100..700&display=swap');
+.h1{
+  font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
         body {
             background-color: #f2d9fc;
             background-size: cover;
@@ -115,10 +125,9 @@
         {% elif are_u == "candidate" %}
         <a class="hover-underline-animation" href="/candidates">Practice Questions</a>
         <a class="hover-underline-animation" href="/prep">Prep Guide</a>
-        {%endif%}
-        {%  if signd == true  %}
-         <a class="hover-underline-animation" href="/contract">contract</a>
-        }
+        {% endif %}
+        {% if not signd and are_u == "candidate" %}
+        <a class="hover-underline-animation" href="/contract">Contract</a>
         {% endif %}
         {% if are_u %}
         <form action="/logout" method="post" style="display:inline;">
